@@ -22,8 +22,6 @@
 	<ItemGroup>
 	  <Folder Include="ShippingOrder\EventHandler\Domain\" />
 	  <Folder Include="ShippingOrder\EventHandler\Integration\" />
-	  <Folder Include="ShippingOrder\Queries\GetShippingOrders\" />
-	  <Folder Include="ShippingOrder\Queries\GetShippingOrderById\" />
 	</ItemGroup>
 
 

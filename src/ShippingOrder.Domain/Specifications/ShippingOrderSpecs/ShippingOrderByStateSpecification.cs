@@ -2,13 +2,13 @@
 using ShippingOrder.Domain.Specifications.Shared;
 using System.Linq.Expressions;
 
-namespace ShippingOrder.Domain.Specifications.PurchaseOrderSpecs;
+namespace ShippingOrder.Domain.Specifications.ShippingOrderSpecs;
 
-public class PurchaseOrderByStateSpecification : Specification<Models.ShippingOrder>
+public class ShippingOrderByStateSpecification : Specification<Models.ShippingOrder>
 {
   private readonly ShippingOrderState _state;
 
-  public PurchaseOrderByStateSpecification(ShippingOrderState state)
+  public ShippingOrderByStateSpecification(ShippingOrderState state)
   {
     _state = state;
   }

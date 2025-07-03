@@ -2,14 +2,14 @@
 using ShippingOrder.Domain.Specifications.Shared;
 using System.Linq.Expressions;
 
-namespace ShippingOrder.Domain.Specifications.PurchaseOrderSpecs;
+namespace ShippingOrder.Domain.Specifications.ShippingOrderSpecs;
 
-public class PurchaseOrderByDateRangeSpecification : Specification<Models.ShippingOrder>
+public class ShippingOrderByDateRangeSpecification : Specification<Models.ShippingOrder>
 {
   private readonly DateTime _startDate;
   private readonly DateTime _endDate;
 
-  public PurchaseOrderByDateRangeSpecification(DateTime startDate, DateTime endDate)
+  public ShippingOrderByDateRangeSpecification(DateTime startDate, DateTime endDate)
   {
     if (startDate > endDate)
       throw new DomainException("Start date cannot be later than end date.");
