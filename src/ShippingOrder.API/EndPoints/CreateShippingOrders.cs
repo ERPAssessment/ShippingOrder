@@ -1,6 +1,6 @@
 ﻿using ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
 
-namespace PurchasingOrder.API.EndPoints;
+namespace ShippingOrder.API.EndPoints;
 
 public record CreateShippingOrderResponse(Guid OrderId);
 public record CreateShippingOrderRequest(CreateShippingOrderDto Orders);

@@ -1,7 +1,4 @@
-﻿using FluentValidation;
-using ShippingOrder.Application.ShippingOrder.Commands.CloseShippingOrder;
-
-namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
+﻿namespace ShippingOrder.Application.ShippingOrder.Commands.CloseShippingOrder;
 
 public class CloseShippingOrderValidator : AbstractValidator<CloseShippingOrderCommand>
 {

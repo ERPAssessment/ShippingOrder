@@ -8,6 +8,7 @@ using ShippingOrder.Infrastructure.Data.Generators.ShippingNumberGenerator;
 using ShippingOrder.Infrastructure.Data.Interceptors;
 using ShippingOrder.Infrastructure.Data.Repositories;
 
+
 namespace ShippingOrder.Infrastructure;
 
 public static class DependencyInjection
@@ -32,6 +33,7 @@ public static class DependencyInjection
     services.AddScoped<IReadShippingOrderRepository, ReadShippingOrderRepository>();
 
     services.AddSingleton<IShippingNumberGenerator, ShippingNumberGenerator>();
+
 
     return services;
   }

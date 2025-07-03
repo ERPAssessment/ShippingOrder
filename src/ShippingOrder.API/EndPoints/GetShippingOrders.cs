@@ -1,6 +1,6 @@
-﻿using PurchasingOrder.Application.PurchaseOrders.Queries.GetPurchaseOrders;
+﻿using ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 
-namespace PurchasingOrder.API.EndPoints;
+namespace ShippingOrder.API.EndPoints;
 
 public record GetShippingOrdersRequest(int PageIndex = 0,
     int PageSize = 10,

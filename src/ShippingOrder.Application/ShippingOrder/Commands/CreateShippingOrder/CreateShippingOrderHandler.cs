@@ -1,4 +1,4 @@
-﻿using PurchasingOrder.Application.Exceptions;
+﻿using ShippingOrder.Application.Exceptions;
 using Models = ShippingOrder.Domain.Models;
 
 namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;

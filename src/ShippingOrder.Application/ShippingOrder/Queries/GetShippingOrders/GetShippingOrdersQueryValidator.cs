@@ -1,7 +1,6 @@
-﻿using FluentValidation;
-using ShippingOrder.Domain.Enums;
+﻿using ShippingOrder.Domain.Enums;
 
-namespace PurchasingOrder.Application.PurchaseOrders.Queries.GetPurchaseOrders;
+namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 
 public class GetShippingOrdersQueryValidator : AbstractValidator<GetShippingOrdersQuery>
 {

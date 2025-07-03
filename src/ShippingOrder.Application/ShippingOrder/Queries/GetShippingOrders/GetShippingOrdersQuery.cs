@@ -1,6 +1,6 @@
 ﻿using ShippingOrder.Shared.Pagination;
 
-namespace PurchasingOrder.Application.PurchaseOrders.Queries.GetPurchaseOrders;
+namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 
 public record GetShippingOrdersQuery(PaginationRequest PaginationRequest,
     DateTime? StartDate = null,

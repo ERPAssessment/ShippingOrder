@@ -1,10 +1,10 @@
-﻿using PurchasingOrder.Application.Extenstions;
+﻿using ShippingOrder.Application.Extenstions;
 using ShippingOrder.Domain.Enums;
 using ShippingOrder.Domain.Specifications.Shared;
 using ShippingOrder.Domain.Specifications.ShippingOrderSpecs;
 using ShippingOrder.Shared.Pagination;
-
-namespace PurchasingOrder.Application.PurchaseOrders.Queries.GetPurchaseOrders;
+using Models = ShippingOrder.Domain.Models;
+namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 
 public class GetShippingOrdersHandler(IReadShippingOrderRepository shippingOrderRepository)
     : IQueryHandler<GetShippingOrdersQuery, GetShippingOrdersResults>
@@ -19,12 +19,12 @@ public class GetShippingOrdersHandler(IReadShippingOrderRepository shippingOrder
   }
 
   private async Task<GetShippingOrdersResults> GetShippingOrdersData(
-      Specification<ShippingOrder.Domain.Models.ShippingOrder>? specification,
+      Specification<Models.ShippingOrder>? specification,
       int pageIndex,
       int pageSize,
       CancellationToken cancellationToken)
   {
-    IEnumerable<ShippingOrder.Domain.Models.ShippingOrder> orders;
+    IEnumerable<Models.ShippingOrder> orders;
     long totalCount;
 
     if (specification != null)
@@ -45,9 +45,9 @@ public class GetShippingOrdersHandler(IReadShippingOrderRepository shippingOrder
   }
 
 
-  private Specification<ShippingOrder.Domain.Models.ShippingOrder>? BuildSpecification(GetShippingOrdersQuery query)
+  private Specification<Models.ShippingOrder>? BuildSpecification(GetShippingOrdersQuery query)
   {
-    var specifications = new List<Specification<ShippingOrder.Domain.Models.ShippingOrder>>();
+    var specifications = new List<Specification<Models.ShippingOrder>>();
 
     if (query.StartDate.HasValue || query.EndDate.HasValue)
     {

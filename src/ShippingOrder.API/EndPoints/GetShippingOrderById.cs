@@ -1,6 +1,6 @@
 ﻿using ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
 
-namespace PurchasingOrder.API.EndPoints;
+namespace ShippingOrder.API.EndPoints;
 
 public record GetShippingOrderByIdResponse(ShippingOrderDto Order);
 

@@ -1,5 +1,5 @@
 ﻿using Models = ShippingOrder.Domain.Models;
-namespace PurchasingOrder.Application.Extenstions;
+namespace ShippingOrder.Application.Extenstions;
 
 public static class ShippingOrdersExtenstion
 {

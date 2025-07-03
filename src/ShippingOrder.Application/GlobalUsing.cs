@@ -1,4 +1,5 @@
-﻿global using ShippingOrder.Application.Data;
+﻿global using FluentValidation;
+global using ShippingOrder.Application.Data;
 global using ShippingOrder.Application.DTOs;
 global using ShippingOrder.Domain.Abstractions.Repositories;
 global using ShippingOrder.Domain.Models;

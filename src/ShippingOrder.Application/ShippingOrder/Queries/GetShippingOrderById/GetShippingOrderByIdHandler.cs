@@ -1,9 +1,7 @@
-﻿
-using PurchasingOrder.Application.Extenstions;
-using ShippingOrder.Application.Exceptions;
-using ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
+﻿using ShippingOrder.Application.Exceptions;
+using ShippingOrder.Application.Extenstions;
 
-namespace PurchasingOrder.Application.PurchaseOrders.Queries.GetPurchaseOrderById;
+namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
 
 public class GetShippingOrderByIdHandler(IReadShippingOrderRepository orderRepository)
     : IQueryHandler<GetShippingOrderByIdQuery, GetShippingOrderByIdResults>

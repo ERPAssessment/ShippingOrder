@@ -1,4 +1,4 @@
-﻿namespace PurchasingOrder.Application.Extenstions;
+﻿namespace ShippingOrder.Application.Extenstions;
 
 public static class SHOItemExtenstion
 {

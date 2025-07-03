@@ -1,7 +1,4 @@
-﻿using FluentValidation;
-using ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
-
-namespace PurchasingOrder.Application.PurchaseOrders.Queries.GetPurchaseOrderById;
+﻿namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
 
 public class GetShippingOrderByIdValidator : AbstractValidator<GetShippingOrderByIdQuery>
 {
