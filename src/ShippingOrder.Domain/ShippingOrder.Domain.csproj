@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\Repositories\" />
+		<PackageReference Include="MediatR" Version="12.5.0" />
+	</ItemGroup>
+
 </Project>
