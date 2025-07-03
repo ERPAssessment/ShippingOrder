@@ -22,8 +22,4 @@
     <ProjectReference Include="..\ShippingOrder.Application\ShippingOrder.Application.csproj" />
   </ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Data\Repositories\" />
-	</ItemGroup>
-
 </Project>

@@ -2,9 +2,11 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ShippingOrder.Application.Data;
+using ShippingOrder.Domain.Abstractions.Repositories;
 using ShippingOrder.Infrastructure.Data;
 using ShippingOrder.Infrastructure.Data.Generators.ShippingNumberGenerator;
 using ShippingOrder.Infrastructure.Data.Interceptors;
+using ShippingOrder.Infrastructure.Data.Repositories;
 
 namespace ShippingOrder.Infrastructure;
 
@@ -26,9 +28,8 @@ public static class DependencyInjection
     });
 
     services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
-    //services.AddScoped<IWritePurchaseOrderRepository, WritePurchaseOrderRepository>();
-    //services.AddScoped<IReadPurchaseOrderRepository, ReadPurchaseOrderRepository>();
-    //services.AddScoped<IReadPurchaseGoodRepository, ReadPurchaseGoodRepository>();
+    services.AddScoped<IWriteShippingOrderRepository, WriteShippingOrderRepository>();
+    services.AddScoped<IReadShippingOrderRepository, ReadShippingOrderRepository>();
 
     services.AddSingleton<IShippingNumberGenerator, ShippingNumberGenerator>();
 
