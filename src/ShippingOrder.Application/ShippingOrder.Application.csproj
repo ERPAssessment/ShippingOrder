@@ -19,5 +19,12 @@
 		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="ShippingOrder\EventHandler\Domain\" />
+	  <Folder Include="ShippingOrder\EventHandler\Integration\" />
+	  <Folder Include="ShippingOrder\Queries\GetShippingOrders\" />
+	  <Folder Include="ShippingOrder\Queries\GetShippingOrderById\" />
+	</ItemGroup>
+
 
 </Project>

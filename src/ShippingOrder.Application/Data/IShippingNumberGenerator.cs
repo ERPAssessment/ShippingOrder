@@ -1,7 +1,6 @@
-﻿using ShippingOrder.Domain.ValueObjects;
-namespace ShippingOrder.Application.Data;
+﻿namespace ShippingOrder.Application.Data;
 
 public interface IShippingNumberGenerator
 {
-  ShippingOrderNumber Generate();
+  Task<ShippingOrderNumber> Generate();
 }

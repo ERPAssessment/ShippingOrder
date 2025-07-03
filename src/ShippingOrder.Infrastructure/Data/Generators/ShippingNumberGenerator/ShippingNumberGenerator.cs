@@ -4,9 +4,9 @@ namespace ShippingOrder.Infrastructure.Data.Generators.ShippingNumberGenerator;
 
 internal class ShippingNumberGenerator : IShippingNumberGenerator
 {
-  public ShippingOrderNumber Generate()
+  public Task<ShippingOrderNumber> Generate()
   {
-    return ShippingOrderNumber.Of($"SHO_{Guid.NewGuid()}");
+    return Task.FromResult(ShippingOrderNumber.Of($"SHO_{Guid.NewGuid()}"));
   }
 }
 

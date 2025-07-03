@@ -6,11 +6,11 @@ internal class WriteShippingOrderRepository
   (IApplicationDbContext dbContext)
   : IWriteShippingOrderRepository
 {
-  public async Task<IEnumerable<Domain.Models.ShippingOrder>> Add(IEnumerable<Domain.Models.ShippingOrder> shippingOrders, CancellationToken cancellationToken)
+  public async Task<Domain.Models.ShippingOrder> Add(Domain.Models.ShippingOrder shippingOrder, CancellationToken cancellationToken)
   {
-    dbContext.ShippingOrders.AddRange(shippingOrders);
+    dbContext.ShippingOrders.Add(shippingOrder);
     await dbContext.SaveChangesAsync(cancellationToken);
-    return shippingOrders;
+    return shippingOrder;
   }
 
   public async Task<Domain.Models.ShippingOrder?> GetById(ShippingOrderId Id, CancellationToken cancellationToken)

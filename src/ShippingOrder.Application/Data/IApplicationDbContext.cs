@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShippingOrder.Domain.Models;
 
 namespace ShippingOrder.Application.Data;
 
