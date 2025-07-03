@@ -20,7 +20,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ShippingOrder\EventHandler\Domain\" />
 	  <Folder Include="ShippingOrder\EventHandler\Integration\" />
 	</ItemGroup>
 
