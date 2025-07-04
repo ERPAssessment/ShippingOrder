@@ -1,4 +1,5 @@
-﻿using MassTransit;
+﻿using ERP.Shared.Events;
+using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using ShippingOrder.Domain.Events;
@@ -14,5 +15,7 @@ public class ShippingOrderClosedEventHandler
   {
     logger.LogInformation("Domain Event handled: {DomainEvent}", domainEvent.GetType().Name);
 
+    var closedOrderEvent = new SHOClosedEvent() { PurchaseOrderNumber = domainEvent.Order.PONumber.Value };
+    await publishEndpoint.Publish(closedOrderEvent, cancellationToken);
   }
 }
