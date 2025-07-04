@@ -1,4 +1,5 @@
-﻿using ShippingOrder.Application.Exceptions;
+﻿using ERP.Shared.CQRS;
+using ShippingOrder.Application.Exceptions;
 
 namespace ShippingOrder.Application.ShippingOrder.Commands.CloseShippingOrder
 {

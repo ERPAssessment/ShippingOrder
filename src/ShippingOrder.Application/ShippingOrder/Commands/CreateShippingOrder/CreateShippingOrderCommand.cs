@@ -1,4 +1,6 @@
-﻿namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
+﻿using ERP.Shared.CQRS;
+
+namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
 
 public record CreateShippingOrderCommand(CreateShippingOrderDto Order)
     : ICommand<CreateShippingOrderResult>;

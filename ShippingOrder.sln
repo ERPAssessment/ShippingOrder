@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShippingOrder.Domain", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShippingOrder.Infrastructure", "src\ShippingOrder.Infrastructure\ShippingOrder.Infrastructure.csproj", "{E2D8D3EB-7FED-4967-8575-6C6CE09E591D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShippingOrder.Shared", "src\ShippingOrder.Shared\ShippingOrder.Shared.csproj", "{F6AE80BC-274E-4B00-A82E-FA9F6351279B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP.Shared", "src\ERP.Shared\ERP.Shared.csproj", "{F6AE80BC-274E-4B00-A82E-FA9F6351279B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShippingOrder.Application", "src\ShippingOrder.Application\ShippingOrder.Application.csproj", "{44FAB158-D498-4573-AEB4-66AF337337F8}"
 EndProject

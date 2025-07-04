@@ -3,9 +3,8 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ShippingOrder.Shared.Exceptions;
 
-namespace ShippingOrder.Shared.Exceptions.Handler;
+namespace ERP.Shared.Exceptions.Handler;
 public class CustomExceptionHandler
     (ILogger<CustomExceptionHandler> logger)
     : IExceptionHandler

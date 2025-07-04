@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShippingOrder.Domain\ShippingOrder.Domain.csproj" />
-    <ProjectReference Include="..\ShippingOrder.Shared\ShippingOrder.Shared.csproj" />
+    <ProjectReference Include="..\ERP.Shared\ERP.Shared.csproj" />
   </ItemGroup>
 
 	<ItemGroup>

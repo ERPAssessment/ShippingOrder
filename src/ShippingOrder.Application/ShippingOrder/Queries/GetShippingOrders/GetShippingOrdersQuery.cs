@@ -1,4 +1,5 @@
-﻿using ShippingOrder.Shared.Pagination;
+﻿using ERP.Shared.CQRS;
+using ERP.Shared.Pagination;
 
 namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 

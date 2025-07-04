@@ -1,2 +1,2 @@
-﻿namespace ShippingOrder.Shared.Pagination;
+﻿namespace ERP.Shared.Pagination;
 public record PaginationRequest(int PageIndex = 0, int PageSize = 10);

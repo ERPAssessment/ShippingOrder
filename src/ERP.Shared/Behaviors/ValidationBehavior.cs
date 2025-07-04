@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 
-namespace ShippingOrder.Shared.Behaviors;
+namespace ERP.Shared.Behaviors;
 public class ValidationBehavior<TRequest, TResponse>
     (IEnumerable<IValidator<TRequest>> validators)
     : IPipelineBehavior<TRequest, TResponse>

@@ -1,4 +1,5 @@
-﻿using ShippingOrder.Application.Exceptions;
+﻿using ERP.Shared.CQRS;
+using ShippingOrder.Application.Exceptions;
 using ShippingOrder.Application.Extenstions;
 
 namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;

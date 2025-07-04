@@ -1,8 +1,8 @@
 ﻿using Carter;
+using ERP.Shared.Exceptions.Handler;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
-using ShippingOrder.Shared.Exceptions.Handler;
 
 namespace ShippingOrder.API;
 

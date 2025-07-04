@@ -1,4 +1,4 @@
-﻿using ShippingOrder.Shared.Exceptions;
+﻿using ERP.Shared.Exceptions;
 
 namespace ShippingOrder.Application.Exceptions;
 

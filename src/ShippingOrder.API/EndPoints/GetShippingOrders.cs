@@ -1,4 +1,5 @@
-﻿using ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
+﻿using ERP.Shared.Pagination;
+using ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 
 namespace ShippingOrder.API.EndPoints;
 

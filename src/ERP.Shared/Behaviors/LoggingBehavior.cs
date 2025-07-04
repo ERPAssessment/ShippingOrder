@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
-namespace ShippingOrder.Shared.Behaviors;
+namespace ERP.Shared.Behaviors;
 public class LoggingBehavior<TRequest, TResponse>
     (ILogger<LoggingBehavior<TRequest, TResponse>> logger)
     : IPipelineBehavior<TRequest, TResponse>

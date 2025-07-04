@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ShippingOrder.Shared.CQRS;
+namespace ERP.Shared.CQRS;
 
 public interface ICommandHandler<in TCommand>
     : ICommandHandler<TCommand, Unit>

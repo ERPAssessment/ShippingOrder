@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ShippingOrder.Shared.CQRS;
+namespace ERP.Shared.CQRS;
 public interface IQueryHandler<in TQuery, TResponse>
     : IRequestHandler<TQuery, TResponse>
     where TQuery : IQuery<TResponse>

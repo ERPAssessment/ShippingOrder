@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using ERP.Shared.Behaviors;
+using ERP.Shared.MassTransit;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ShippingOrder.Shared.Behaviors;
-using ShippingOrder.Shared.MassTransit;
 using System.Reflection;
 namespace ShippingOrder.Application;
 

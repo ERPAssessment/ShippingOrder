@@ -1,8 +1,9 @@
-﻿using ShippingOrder.Application.Extenstions;
+﻿using ERP.Shared.CQRS;
+using ERP.Shared.Pagination;
+using ShippingOrder.Application.Extenstions;
 using ShippingOrder.Domain.Enums;
 using ShippingOrder.Domain.Specifications.Shared;
 using ShippingOrder.Domain.Specifications.ShippingOrderSpecs;
-using ShippingOrder.Shared.Pagination;
 using Models = ShippingOrder.Domain.Models;
 namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 
