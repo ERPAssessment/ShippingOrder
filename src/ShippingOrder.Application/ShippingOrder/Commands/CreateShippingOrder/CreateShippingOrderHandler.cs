@@ -12,7 +12,7 @@ public class CreateShippingOrderHandler
 {
   public async Task<CreateShippingOrderResult> Handle(CreateShippingOrderCommand request, CancellationToken cancellationToken)
   {
-    var shOrder = await CreateNewSHOrder(request.SHOrder);
+    var shOrder = await CreateNewSHOrder(request.Order);
     await OrderRepository.Add(shOrder, cancellationToken);
     return new CreateShippingOrderResult(shOrder.Id.Value);
   }

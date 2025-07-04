@@ -8,7 +8,7 @@ namespace ShippingOrder.Application.ShippingOrder.Commands.CloseShippingOrder
   {
     public async Task<CloseShippingOrderResult> Handle(CloseShippingOrderCommand request, CancellationToken cancellationToken)
     {
-      var order = await CloseSHOOrder(Guid.Parse(request.SHOrderId), cancellationToken);
+      var order = await CloseSHOOrder(Guid.Parse(request.OrderId), cancellationToken);
 
       await OrderRepository.Update(order, cancellationToken);
 

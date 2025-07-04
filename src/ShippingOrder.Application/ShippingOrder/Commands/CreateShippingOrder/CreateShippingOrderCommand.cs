@@ -1,6 +1,6 @@
 ﻿namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
 
-public record CreateShippingOrderCommand(CreateShippingOrderDto SHOrder)
+public record CreateShippingOrderCommand(CreateShippingOrderDto Order)
     : ICommand<CreateShippingOrderResult>;
 
-public record CreateShippingOrderResult(Guid SHOrderId);
+public record CreateShippingOrderResult(Guid Id);

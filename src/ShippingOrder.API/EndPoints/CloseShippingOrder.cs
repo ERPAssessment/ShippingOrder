@@ -3,7 +3,7 @@
 namespace ShippingOrder.API.EndPoints;
 
 public record CloseShippingOrderResponse(bool Result);
-public record CloseShippingOrderRequest(Guid Id);
+public record CloseShippingOrderRequest(string OrderId);
 
 public class CloseShippingOrder : ICarterModule
 {
@@ -17,7 +17,7 @@ public class CloseShippingOrder : ICarterModule
 
       var response = result.Adapt<CloseShippingOrderResponse>();
 
-      return Results.Created($"/GetShippingOrderById/{request.Id}", response);
+      return Results.Created($"/GetShippingOrderById/{request.OrderId}", response);
     })
            .WithName("CloseShippingOrder")
            .Produces<CloseShippingOrderResponse>(StatusCodes.Status200OK)

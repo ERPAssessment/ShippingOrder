@@ -4,7 +4,7 @@ public class CloseShippingOrderValidator : AbstractValidator<CloseShippingOrderC
 {
   public CloseShippingOrderValidator()
   {
-    RuleFor(x => x.SHOrderId)
+    RuleFor(x => x.OrderId)
              .NotEmpty()
              .WithMessage("Shipping Order Id should not be empty")
              .Must(BeValidGuid)

@@ -1,0 +1,13 @@
+services:
+
+  shippingorderDB:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+
+  messagebroker:
+    image: rabbitmq:management
+
+  shippingorder.api:
+    image: ${DOCKER_REGISTRY-}shippingorderapi
+    build:
+      context: .
+      dockerfile: src/ShippingOrder.API/Dockerfile
