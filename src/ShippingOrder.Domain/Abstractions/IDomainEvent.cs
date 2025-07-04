@@ -1,7 +1,5 @@
-﻿using MediatR;
-
-namespace ShippingOrder.Domain.Abstractions;
-public interface IDomainEvent : INotification
+﻿namespace ShippingOrder.Domain.Abstractions;
+public interface IDomainEvent
 {
   Guid EventId => Guid.NewGuid();
   public DateTime OccurredOn => DateTime.Now;

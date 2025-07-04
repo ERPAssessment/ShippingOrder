@@ -1,10 +1,10 @@
-﻿using ERP.Shared.CQRS;
-using ShippingOrder.Application.Exceptions;
+﻿using ShippingOrder.Application.Exceptions;
 
 namespace ShippingOrder.Application.ShippingOrder.Commands.CloseShippingOrder
 {
   internal class CloseShippingOrderHandler
-  (IWriteShippingOrderRepository OrderRepository) :
+  (
+    IWriteShippingOrderRepository OrderRepository) :
    ICommandHandler<CloseShippingOrderCommand, CloseShippingOrderResult>
   {
     public async Task<CloseShippingOrderResult> Handle(CloseShippingOrderCommand request, CancellationToken cancellationToken)

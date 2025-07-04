@@ -1,6 +1,8 @@
-﻿namespace ERP.Shared.Events;
+﻿using MediatR;
 
-public record SHOCreatedEvent : IntegrationEvent
+namespace ERP.Shared.Events;
+
+public record SHOCreatedEvent : IntegrationEvent, INotification
 {
   public string PurchaseOrderNumber { get; set; } = default!;
 }

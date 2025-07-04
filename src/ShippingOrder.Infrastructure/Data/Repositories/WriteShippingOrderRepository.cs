@@ -8,7 +8,7 @@ internal class WriteShippingOrderRepository
 {
   public async Task<Domain.Models.ShippingOrder> Add(Domain.Models.ShippingOrder shippingOrder, CancellationToken cancellationToken)
   {
-    dbContext.ShippingOrders.Add(shippingOrder);
+    await dbContext.ShippingOrders.AddAsync(shippingOrder, cancellationToken);
     await dbContext.SaveChangesAsync(cancellationToken);
     return shippingOrder;
   }
