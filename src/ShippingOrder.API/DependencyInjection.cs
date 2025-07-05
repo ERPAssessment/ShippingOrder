@@ -1,5 +1,4 @@
-﻿using Carter;
-using ERP.Shared.Exceptions.Handler;
+﻿using ERP.Shared.Exceptions.Handler;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
@@ -16,8 +15,6 @@ public static class DependencyInjection
     services.AddCarter();
 
     services.AddExceptionHandler<CustomExceptionHandler>();
-    services.AddHealthChecks()
-        .AddSqlServer(configuration.GetConnectionString("Database")!);
 
     Log.Logger = new LoggerConfiguration()
         .MinimumLevel.Debug()

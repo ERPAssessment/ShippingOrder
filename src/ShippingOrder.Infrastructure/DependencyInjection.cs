@@ -12,7 +12,8 @@ public static class DependencyInjection
     services.AddRepositories();
     services.AddDomainServices();
     services.AddBackgroundJobs(configuration);
-    services.AddGRPCServices();
+    services.AddGRPCServices(configuration);
+    services.AddDIHealthChecks(configuration);
 
     return services;
   }
