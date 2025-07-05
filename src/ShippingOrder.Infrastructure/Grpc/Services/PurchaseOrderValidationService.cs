@@ -3,33 +3,37 @@ using ShippingOrder.Application.Services;
 
 namespace ShippingOrder.Infrastructure.GRPC.Services;
 
-public class PurchaseOrderValidationService : IPurchaseOrderValidationService
+public class PurchaseOrderValidationService
+  (ILogger<PurchaseOrderValidationService> logger,
+  OrderProtoService.OrderProtoServiceClient client)
+  : IPurchaseOrderValidationService
 {
-  private readonly OrderProtoService.OrderProtoServiceClient _client;
-
-  public PurchaseOrderValidationService(OrderProtoService.OrderProtoServiceClient client)
-  {
-    _client = client;
-  }
-
   public async Task<bool> ValidateOrderAsync(string poNumber, List<(string Id, string Code, decimal Price)> items)
   {
-    var request = new msgIsValidAndEligibleOrderRequest
+    try
     {
-      PurchaseOrderNumber = poNumber
-    };
-
-    foreach (var item in items)
-    {
-      request.Items.Add(new msgPurchaseItem
+      var request = new msgIsValidAndEligibleOrderRequest
       {
-        Id = item.Id,
-        GoodCode = item.Code,
-        Price = (double)item.Price
-      });
-    }
+        PurchaseOrderNumber = poNumber
+      };
 
-    var response = await _client.IsValidAndEligibleOrderAsync(request);
-    return response.Success;
+      foreach (var item in items)
+      {
+        request.Items.Add(new msgPurchaseItem
+        {
+          Id = item.Id,
+          GoodCode = item.Code,
+          Price = (double)item.Price
+        });
+      }
+
+      var response = await client.IsValidAndEligibleOrderAsync(request);
+      return response.Success;
+    }
+    catch (Exception ex)
+    {
+      logger.LogError(ex.Message);
+      return false;
+    }
   }
 }

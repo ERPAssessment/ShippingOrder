@@ -21,4 +21,5 @@ message msgPurchaseItem {
 
 message msgIsValidAndEligibleOrderResponse {
 	bool success = 1;
+	string errorMessage = 2;
 }

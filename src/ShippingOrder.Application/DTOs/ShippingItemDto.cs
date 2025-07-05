@@ -1,6 +1,6 @@
 ﻿namespace ShippingOrder.Application.DTOs;
 public record ShippingItemDto(
-    Guid Id,
+    string Id,
     string PurchaseGoodCode,
     decimal Price
 );
