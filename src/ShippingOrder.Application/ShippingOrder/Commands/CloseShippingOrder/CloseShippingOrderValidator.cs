@@ -1,6 +1,6 @@
 ﻿namespace ShippingOrder.Application.ShippingOrder.Commands.CloseShippingOrder;
 
-public class CloseShippingOrderValidator : AbstractValidator<CloseShippingOrderCommand>
+internal class CloseShippingOrderValidator : AbstractValidator<CloseShippingOrderCommand>
 {
   public CloseShippingOrderValidator()
   {

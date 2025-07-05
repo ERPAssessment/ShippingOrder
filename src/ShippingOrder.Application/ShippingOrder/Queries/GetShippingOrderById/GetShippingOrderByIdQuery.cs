@@ -1,6 +1,4 @@
-﻿using ERP.Shared.CQRS;
-
-namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
+﻿namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
 
 public record GetShippingOrderByIdQuery(string Id)
     : IQuery<GetShippingOrderByIdResults>;

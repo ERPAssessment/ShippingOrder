@@ -1,10 +1,9 @@
-﻿using ERP.Shared.CQRS;
-using ShippingOrder.Application.Exceptions;
+﻿using ShippingOrder.Application.Exceptions;
 using ShippingOrder.Application.Extenstions;
 
 namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
 
-public class GetShippingOrderByIdHandler(IReadShippingOrderRepository orderRepository)
+internal class GetShippingOrderByIdQueryHandler(IReadShippingOrderRepository orderRepository)
     : IQueryHandler<GetShippingOrderByIdQuery, GetShippingOrderByIdResults>
 {
   public async Task<GetShippingOrderByIdResults> Handle(GetShippingOrderByIdQuery query, CancellationToken cancellationToken)

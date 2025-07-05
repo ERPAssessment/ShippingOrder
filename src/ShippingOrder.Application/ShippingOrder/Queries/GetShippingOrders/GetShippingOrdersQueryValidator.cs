@@ -2,7 +2,7 @@
 
 namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 
-public class GetShippingOrdersQueryValidator : AbstractValidator<GetShippingOrdersQuery>
+internal class GetShippingOrdersQueryValidator : AbstractValidator<GetShippingOrdersQuery>
 {
   public GetShippingOrdersQueryValidator()
   {

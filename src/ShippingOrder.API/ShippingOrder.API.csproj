@@ -31,4 +31,7 @@
     <ProjectReference Include="..\ERP.Shared\ERP.Shared.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="ShippingOrder.ArchitectureTests" />
+	</ItemGroup>
 </Project>

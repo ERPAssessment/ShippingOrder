@@ -2,7 +2,7 @@
 
 namespace ShippingOrder.Application.ShippingOrder.Commands.CloseShippingOrder
 {
-  internal class CloseShippingOrderHandler
+  internal class CloseShippingOrderCommandHandler
   (
     IWriteShippingOrderRepository OrderRepository) :
    ICommandHandler<CloseShippingOrderCommand, CloseShippingOrderResult>

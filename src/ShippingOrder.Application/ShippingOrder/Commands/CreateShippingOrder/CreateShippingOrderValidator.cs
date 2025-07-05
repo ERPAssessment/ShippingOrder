@@ -1,8 +1,6 @@
-﻿using FluentValidation;
+﻿namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
 
-namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
-
-public class CreateShippingOrderValidator : AbstractValidator<CreateShippingOrderCommand>
+internal class CreateShippingOrderValidator : AbstractValidator<CreateShippingOrderCommand>
 {
   public CreateShippingOrderValidator()
   {

@@ -4,7 +4,7 @@ using Models = ShippingOrder.Domain.Models;
 
 namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
 
-public class CreateShippingOrderHandler
+internal class CreateShippingOrderCommandHandler
   (
   IPurchaseOrderValidationService PurchaseOrderService,
   IWriteShippingOrderRepository OrderRepository,

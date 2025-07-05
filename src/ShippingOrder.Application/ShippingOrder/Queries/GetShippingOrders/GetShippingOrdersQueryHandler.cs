@@ -1,5 +1,4 @@
-﻿using ERP.Shared.CQRS;
-using ERP.Shared.Pagination;
+﻿using ERP.Shared.Pagination;
 using ShippingOrder.Application.Extenstions;
 using ShippingOrder.Domain.Enums;
 using ShippingOrder.Domain.Specifications.Shared;
@@ -7,7 +6,7 @@ using ShippingOrder.Domain.Specifications.ShippingOrderSpecs;
 using Models = ShippingOrder.Domain.Models;
 namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrders;
 
-public class GetShippingOrdersHandler(IReadShippingOrderRepository shippingOrderRepository)
+internal class GetShippingOrdersQueryHandler(IReadShippingOrderRepository shippingOrderRepository)
     : IQueryHandler<GetShippingOrdersQuery, GetShippingOrdersResults>
 {
   public async Task<GetShippingOrdersResults> Handle(GetShippingOrdersQuery query, CancellationToken cancellationToken)

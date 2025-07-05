@@ -1,6 +1,6 @@
 ﻿namespace ShippingOrder.Application.ShippingOrder.Queries.GetShippingOrderById;
 
-public class GetShippingOrderByIdValidator : AbstractValidator<GetShippingOrderByIdQuery>
+internal class GetShippingOrderByIdValidator : AbstractValidator<GetShippingOrderByIdQuery>
 {
   public GetShippingOrderByIdValidator()
   {

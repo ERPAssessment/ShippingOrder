@@ -110,7 +110,7 @@ public class ProcessOutboxMessagesJob
   {
     try
     {
-      var domainAssembly = typeof(ShippingOrderCreatedEvent).Assembly;
+      var domainAssembly = typeof(ShippingOrderCreatedDomainEvent).Assembly;
 
       return JsonConvert.DeserializeObject<INotification>(
           outboxMessage.Content,

@@ -81,8 +81,8 @@ public class DispatchDomainEventsInterceptor : SaveChangesInterceptor
   {
     return domainEvent switch
     {
-      ShippingOrderCreatedEvent e => new SHOCreatedEvent() { PurchaseOrderNumber = e.Order.PONumber.Value },
-      ShippingOrderClosedEvent e => new SHOClosedEvent() { PurchaseOrderNumber = e.Order.PONumber.Value },
+      ShippingOrderCreatedDomainEvent e => new SHOCreatedEvent() { PurchaseOrderNumber = e.Order.PONumber.Value },
+      ShippingOrderClosedDomainEvent e => new SHOClosedEvent() { PurchaseOrderNumber = e.Order.PONumber.Value },
       _ => throw new NotSupportedException($"No DTO mapping defined for {domainEvent.GetType().Name}")
     };
   }

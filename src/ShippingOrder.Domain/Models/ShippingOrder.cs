@@ -37,7 +37,7 @@ public class ShippingOrder : Aggregate<ShippingOrderId>
     };
 
     SHOOrder.AddShippingItem(goodCode, price);
-    SHOOrder.AddDomainEvent(new ShippingOrderCreatedEvent(SHOOrder));
+    SHOOrder.AddDomainEvent(new ShippingOrderCreatedDomainEvent(SHOOrder));
 
     return SHOOrder;
   }
@@ -47,7 +47,7 @@ public class ShippingOrder : Aggregate<ShippingOrderId>
     CheckCanClose();
 
     DocumentState = ShippingOrderState.Closed;
-    AddDomainEvent(new ShippingOrderClosedEvent(this));
+    AddDomainEvent(new ShippingOrderClosedDomainEvent(this));
   }
 
   private void CheckCanClose()
