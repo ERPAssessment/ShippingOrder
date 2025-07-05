@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "PurchasingOrder.API.Protos";
+
+package Order;
+
+service OrderProtoService {
+	rpc IsValidAndEligibleOrder(msgIsValidAndEligibleOrderRequest) returns (msgIsValidAndEligibleOrderResponse);
+}
+
+message msgIsValidAndEligibleOrderRequest {
+	string PurchaseOrderNumber = 1;
+	repeated msgPurchaseItem Items = 2;
+}
+
+message msgPurchaseItem {
+	string Id = 1;
+	string GoodCode = 2;
+	double Price = 3;
+}
+
+message msgIsValidAndEligibleOrderResponse {
+	bool success = 1;
+}

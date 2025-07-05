@@ -15,7 +15,7 @@ WORKDIR /src
 COPY ["src/ShippingOrder.API/ShippingOrder.API.csproj", "src/ShippingOrder.API/"]
 COPY ["src/ShippingOrder.Application/ShippingOrder.Application.csproj", "src/ShippingOrder.Application/"]
 COPY ["src/ShippingOrder.Domain/ShippingOrder.Domain.csproj", "src/ShippingOrder.Domain/"]
-COPY ["src/ShippingOrder.Shared/ShippingOrder.Shared.csproj", "src/ShippingOrder.Shared/"]
+COPY ["src/ERP.Shared/ERP.Shared.csproj", "src/ERP.Shared/"]
 COPY ["src/ShippingOrder.Infrastructure/ShippingOrder.Infrastructure.csproj", "src/ShippingOrder.Infrastructure/"]
 RUN dotnet restore "./src/ShippingOrder.API/ShippingOrder.API.csproj"
 COPY . .

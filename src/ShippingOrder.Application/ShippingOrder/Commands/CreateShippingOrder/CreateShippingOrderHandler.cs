@@ -1,10 +1,12 @@
 ﻿using ShippingOrder.Application.Exceptions;
+using ShippingOrder.Application.Services;
 using Models = ShippingOrder.Domain.Models;
 
 namespace ShippingOrder.Application.ShippingOrder.Commands.CreateShippingOrder;
 
 public class CreateShippingOrderHandler
   (
+  IPurchaseOrderValidationService PurchaseOrderService,
   IWriteShippingOrderRepository OrderRepository,
   IShippingNumberGenerator ShippingOrderNumberGenerator
   ) :
@@ -23,6 +25,8 @@ public class CreateShippingOrderHandler
     {
       throw new ShippingOrderItemsCannotEmptyException();
     }
+
+    await ValidateOrderAsync(order);
 
     var FirstItem = order.ShippingItems[0];
 
@@ -45,5 +49,18 @@ public class CreateShippingOrderHandler
     }
 
     return SHO;
+  }
+
+  async Task ValidateOrderAsync(CreateShippingOrderDto dto)
+  {
+    var items = dto.ShippingItems
+        .Select(item => (item.Id.ToString(), item.PurchaseGoodCode, item.Price))
+        .ToList();
+
+    bool result = await PurchaseOrderService.ValidateOrderAsync(dto.PurchaseOrderNumber, items);
+    if (!result)
+    {
+      throw new ShippingOrderNotValidException(dto.PurchaseOrderNumber);
+    }
   }
 }

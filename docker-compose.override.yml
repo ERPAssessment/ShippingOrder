@@ -1,24 +1,40 @@
 services:
+  # ErpDb:
+  #   container_name: ErpDb
+  #   environment:       
+  #     - ACCEPT_EULA=Y
+  #     - SA_PASSWORD=StrongP@ssw0rd123
+  #   restart: always
+  #   ports:
+  #     - "1433:1433" 
+   
+  # messagebroker:
+  #   container_name: MqMessageBroker
+  #   hostname: erp-mq
+  #   environment:
+  #     - RABBITMQ_DEFAULT_USER=guest
+  #     - RABBITMQ_DEFAULT_PASS=guest
+  #   restart: always
+  #   ports:
+  #     - "5672:5672"
+  #     - "15672:15672"
 
-  shippingorderDB:
-    container_name: shippingorderDB
-    environment:       
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=StrongP@ssw0rd123
-    restart: always
-    ports:
-      - "1402:1433" 
-  
   shippingorder.api:
+    container_name: shippingorderapi
     environment:
+      - ConnectionStrings__Database=Server=ErpDb;Database=ShippingOrderDb;User Id=sa;Password=StrongP@ssw0rd123;Encrypt=False;TrustServerCertificate=True
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
+      - MessageBroker__Host=amqp://ecommerce-mq:5672
+      - MessageBroker__UserName=guest
+      - MessageBroker__Password=guest
     ports:
-      - "8080"
-      - "8081"
+      - "6100:8080"
+      - "6160:8081"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
-    depends_on:
-      - shippingorderDB
+    # depends_on:
+    #   - ErpDb
+    #   - messagebroker
