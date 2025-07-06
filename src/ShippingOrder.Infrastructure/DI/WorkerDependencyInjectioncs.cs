@@ -12,7 +12,7 @@ internal static class WorkerDependencyInjectioncs
     IConfiguration configuration)
   {
     var quartzConfig = configuration.GetSection("Quartz");
-    var processingInterval = quartzConfig.GetValue<int?>("OutboxProcessingIntervalSeconds")
+    var processingInterval = quartzConfig.GetValue<int?>("OutboxIntervalSeconds")
         ?? OUTBOX_PROCESSING_INTERVAL_SECONDS;
 
     services.AddQuartz(configure =>

@@ -7,9 +7,11 @@ public static class QuartzJobExtensions
 {
   public static IServiceCollectionQuartzConfigurator AddOutboxProcessingJob(
       this IServiceCollectionQuartzConfigurator configurator,
-      int intervalSeconds = 10,
+      IConfiguration configuration,
       string jobGroup = "OutboxProcessing")
   {
+    var intervalSeconds = int.Parse(configuration["Quartz:OutboxIntervalSeconds"]!);
+
     var jobKey = new JobKey(nameof(ProcessOutboxMessagesJob), jobGroup);
     var triggerKey = new TriggerKey($"{nameof(ProcessOutboxMessagesJob)}_Trigger", jobGroup);
 

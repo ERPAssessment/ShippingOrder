@@ -4,11 +4,10 @@
 public class ProcessOutboxMessagesJob
 (IApplicationDbContext _dbContext,
       IMediator _mediator,
-      ILogger<ProcessOutboxMessagesJob> _logger) : IJob
+      ILogger<ProcessOutboxMessagesJob> _logger,
+      IConfiguration configuration
+      ) : IJob
 {
-  private const int BatchSize = 20;
-  private const int MaxRetryAttempts = 3;
-
   public async Task Execute(IJobExecutionContext context)
   {
     using var scope = _logger.BeginScope(new { JobId = context.FireInstanceId });
@@ -43,6 +42,8 @@ public class ProcessOutboxMessagesJob
   {
     _logger.LogDebug("Querying unprocessed outbox messages");
 
+    var BatchSize = int.Parse(configuration["Quartz:OutboxBatchSize"]!);
+
     return await _dbContext
         .OutboxMessages
         .Where(m => m.ProcessedOnUtc == null)
@@ -63,6 +64,8 @@ public class ProcessOutboxMessagesJob
   {
     using var messageScope = _logger.BeginScope(new { MessageId = outboxMessage.Id });
     _logger.LogDebug("Processing outbox message");
+
+    var MaxRetryAttempts = int.Parse(configuration["Quartz:OutboxMaxRetries"]!);
 
     for (int attempt = 1; attempt <= MaxRetryAttempts; attempt++)
     {
