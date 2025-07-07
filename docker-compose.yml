@@ -1,12 +1,18 @@
 services:
-  # ErpDb:
-  #   image: mcr.microsoft.com/mssql/server:2022-latest
+  ErpDb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
 
-  # messagebroker:
-  #   image: rabbitmq:management
+  messagebroker:
+    image: rabbitmq:management
 
   shippingorder.api:
     image: ${DOCKER_REGISTRY-}shippingorderapi
     build:
       context: ./
       dockerfile: src/ShippingOrder.API/Dockerfile
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.9.2

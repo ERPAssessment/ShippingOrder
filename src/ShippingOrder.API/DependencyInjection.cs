@@ -1,7 +1,6 @@
 ﻿using ERP.Shared.Exceptions.Handler;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Serilog;
 
 namespace ShippingOrder.API;
 
@@ -15,11 +14,6 @@ public static class DependencyInjection
     services.AddCarter();
 
     services.AddExceptionHandler<CustomExceptionHandler>();
-
-    Log.Logger = new LoggerConfiguration()
-        .MinimumLevel.Debug()
-        .WriteTo.Debug()
-        .CreateLogger();
 
     return services;
   }

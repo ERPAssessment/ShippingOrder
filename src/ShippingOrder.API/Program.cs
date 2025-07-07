@@ -1,3 +1,5 @@
+using ERP.Shared.Logging;
+using Serilog;
 using ShippingOrder.API;
 using ShippingOrder.Application;
 using ShippingOrder.Infrastructure;
@@ -10,6 +12,8 @@ builder.Services
     .AddApplicationServices(builder.Configuration)
     .AddInfrastructureServices(builder.Configuration)
     .AddApiServices(builder.Configuration);
+
+builder.Host.UseSerilog(SeriLogger.Configure);
 
 var app = builder.Build();
 
