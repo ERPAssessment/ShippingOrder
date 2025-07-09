@@ -23,7 +23,7 @@ services:
   shippingorder.api:
     container_name: shippingorderapi
     environment:
-      - ConnectionStrings:Database=Server=ErpDb;Database=PurchasingOrderDb;User Id=sa;Password=StrongP@ssw0rd123;Encrypt=False;TrustServerCertificate=True
+      - ConnectionStrings:Database=Server=ErpDb,1433;Database=ShippingOrderDb;User Id=SA;Password=StrongP@ssw0rd123;Encrypt=False;TrustServerCertificate=True
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
