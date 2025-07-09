@@ -14,7 +14,7 @@
 | [6. Testing](#6-testing) | Testing Coverage |
 | [7. Upcoming Work](#7-upcoming-work) | Planned enhancements |
 | [Accessing APIs](#-accessing-apis) | Swagger endpoints |
-
+| [Health Endpoints](#health-endpoints) | Health Status |
 ---
 
 ## 1. Architectural Approach
@@ -129,3 +129,14 @@ Once the services are running, you can explore their REST APIs using Swagger:
 
 - **Purchase Order Service**: [https://localhost:6060/swagger/index.html](https://localhost:6060/swagger/index.html)
 - **Shipping Order Service**: [https://localhost:6160/swagger/index.html](https://localhost:6160/swagger/index.html)
+
+## Health Endpoints
+
+Each microservice exposes a health check endpoint to verify the status of dependencies such as the database, gRPC connections, and message broker:
+
+| Service                | Health URL                     | Checks                                         |
+| ---------------------- | ------------------------------ | ---------------------------------------------- |
+| Purchase Order Service | `http://localhost:6060/health` | SQL Server, RabbitMQ, gRPC server readiness    |
+| Shipping Order Service | `http://localhost:6160/health` | SQL Server, RabbitMQ, gRPC client connectivity |
+
+✅ Use these URLs to integrate with monitoring tools or to manually inspect service health.
