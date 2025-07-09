@@ -2,6 +2,20 @@
 
 # Technical Architecture Overview: Purchasing & Shipping Order System
 
+## 📑 Table of Contents
+
+| Section | Description |
+|--------|-------------|
+| [1. Architectural Approach](#1-architectural-approach) | Design principles and service setup |
+| [2. Service Roles](#2-service-roles) | Responsibilities of Purchase and Shipping Order services |
+| [3. Communication Mechanisms](#3-communication-mechanisms) | gRPC and event-driven communication |
+| [4. Outbox Pattern](#4-outbox-pattern-reliability-strategy) | Ensuring reliable messaging |
+| [5. Observability and Infrastructure](#5-observability-and-infrastructure) | Logging and deployment infrastructure |
+| [6. Upcoming Work](#6-upcoming-work) | Planned enhancements |
+| [Accessing APIs](#-accessing-apis) | Swagger endpoints |
+
+---
+
 ## 1. Architectural Approach
 
 This system adopts a **Domain-Driven Design (DDD)** and **Clean Architecture** strategy, with **modular bounded contexts** for Purchasing and Shipping. Services are fully decoupled and communicate through **asynchronous messaging** and **synchronous gRPC**, enabling scalability, resilience, and runtime flexibility.
@@ -14,7 +28,7 @@ Each service is:
 
 ---
 
-## **2. Service Roles**
+## 2. Service Roles
 
 ### 🛒 **Purchase Order Service**
 
