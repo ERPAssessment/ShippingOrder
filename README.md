@@ -11,7 +11,8 @@
 | [3. Communication Mechanisms](#3-communication-mechanisms) | gRPC and event-driven communication |
 | [4. Outbox Pattern](#4-outbox-pattern-reliability-strategy) | Ensuring reliable messaging |
 | [5. Observability and Infrastructure](#5-observability-and-infrastructure) | Logging and deployment infrastructure |
-| [6. Upcoming Work](#6-upcoming-work) | Planned enhancements |
+| [6. Testing](#6-testing) | Testing Coverage |
+| [7. Upcoming Work](#7-upcoming-work) | Planned enhancements |
 | [Accessing APIs](#-accessing-apis) | Swagger endpoints |
 
 ---
@@ -90,7 +91,18 @@ Each service is:
 
 - All services and infrastructure run in **Docker containers**.
 
-## 6. Upcoming Work
+
+## 6. Testing
+
+The solution includes well-structured test projects to ensure code quality and validate architectural and domain correctness:
+
+| Project                                 | Purpose                                                                                                                                      |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PurchasingOrder.Application.UnitTests` | Verifies application layer logic such as use cases, commands, and query handlers.                                                            |
+| `PurchasingOrder.ArchitectureTests`     | Uses tools like [NetArchTest](https://github.com/BenMorris/NetArchTest) or similar to validate architectural rules and layering constraints. |
+| `PurchasingOrder.Domain.UnitTests`      | Ensures correctness of domain entities, value objects, and domain services through isolated unit tests.                                      |
+
+## 7. Upcoming Work
 
 ### 🛡 API Gateway
 
